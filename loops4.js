@@ -89,6 +89,7 @@ var months = [{
 // for (var i=1; i < 12; i++) {
 //     for (var k=0; k < 60; k++) {
 //         for (var m=0; m < 60; m++) {
+//             addAZero();
 //             console.log(i + ':' + k + ':' + m + ' AM');
 //         }
 //     }
@@ -96,38 +97,53 @@ var months = [{
 // for (var i=12; i === 12; i++) {
 //     for (var k=0; k < 60; k++) {
 //         for (var m=0; m < 60; m++) {
+//             addAZero();
 //             console.log(i + ':' + k + ':' + m + ' PM');
 //         }
 //     }
 // }
-// for (var i=1; i < 12; i++) {
-//     for (var k=0; k < 60; k++) {
-//         for (var m=0; m < 60; m++) {
-//             console.log(i + ':' + k + ':' + m + ' PM');
-//         }
-//     }
-// }
-for (var i=12; i === 12; i++) {
-    for (var k=0; k < 60; k++) {
-        for (var m=0; m < 60; m++) {
-            console.log(i + ':' + k + ':' + m + ' AM');
+
+var am = 'AM';
+var pm = 'PM';
+
+function forLoop12 (amPm) {
+    for (i=12; i === 12; i++) {
+        for (k=0; k < 60; k++) {
+            for (m=0; m < 60; m++) {
+                addAZero(i, k, m);
+                console.log(i + ':' + k + ':' + m + ' ' + amPm);
+            }
         }
     }
 }
 
-
-
-function addZero () {
-    if  (m.toString().length === 1) {
-        m = ('0' + m).slice(-2);
-    }
-    else if (k.toString().length === 1) {
-        k = ('0' + k).slice(-2);
-    }
-    else if (i.toString().length === 1) {
-        i = ('0' + i).slice(-2);
+function forLoop1To11 (amPm) {
+    for (i=1; i < 12; i++) {
+        for (k=0; k < 60; k++) {
+            for (m=0; m < 60; m++) {
+                addAZero();
+                console.log(i + ':' + k + ':' + m + ' ' + amPm);
+            }
+        }
     }
 }
+
+function addAZero () {
+    if  (m.toString().length === 1) {
+        m = ('0' + m);
+    }
+    else if (k.toString().length === 1) {
+        k = ('0' + k);
+    }
+    else if (i.toString().length === 1) {
+        i = ('0' + i);
+    }
+}
+forLoop1To11(am);
+forLoop12(pm);
+forLoop1To11(pm);
+forLoop12(am);
+
 
 //
 // Now, write a function that turns all single digit numbers into their respective two digit format. For example, 1 should be 01 and 9 should be 09. Then use this function to format your output from part 3, so it will now look like the following:

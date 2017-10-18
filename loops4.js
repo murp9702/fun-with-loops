@@ -45,30 +45,18 @@ var months = [{
 // }
 
 // 2. Write a set of loops that will print out each second of each hour in a day (in 24 hour clock format).
+
+// for (var i=0; i < 24; i++) {
+//     for (var k=0; k < 60; k++) {
+//         for (var m=0; m < 60; m++) {
+//             console.log(i + ':' + k + ':' + m);
+//         }
+//     }
+// }
 //
-// For example, your output should look like the following:
-//
-// <pre>
-// 0:0:0
-// 0:0:1
-// ...
-// 0:0:58
-// 0:0:59
-// 0:1:0
-// 0:1:1
-// ...
-// 0:1:58
-// 0:1:59
-// ...
-// 23:0:0
-// 23:0:1
-// ...
-// 23:59:58
-// 23:59:59
-// </pre>
-//
-// There should be 24 * 60 * 60 = 82,800 print statements.
-//
+
+
+
 // BONUS
 // ----------
 //
@@ -98,6 +86,49 @@ var months = [{
 // ...
 // 12:59:59 AM
 // </pre>
+// for (var i=1; i < 12; i++) {
+//     for (var k=0; k < 60; k++) {
+//         for (var m=0; m < 60; m++) {
+//             console.log(i + ':' + k + ':' + m + ' AM');
+//         }
+//     }
+// }
+// for (var i=12; i === 12; i++) {
+//     for (var k=0; k < 60; k++) {
+//         for (var m=0; m < 60; m++) {
+//             console.log(i + ':' + k + ':' + m + ' PM');
+//         }
+//     }
+// }
+// for (var i=1; i < 12; i++) {
+//     for (var k=0; k < 60; k++) {
+//         for (var m=0; m < 60; m++) {
+//             console.log(i + ':' + k + ':' + m + ' PM');
+//         }
+//     }
+// }
+for (var i=12; i === 12; i++) {
+    for (var k=0; k < 60; k++) {
+        for (var m=0; m < 60; m++) {
+            console.log(i + ':' + k + ':' + m + ' AM');
+        }
+    }
+}
+
+
+
+function addZero () {
+    if  (m.toString().length === 1) {
+        m = ('0' + m).slice(-2);
+    }
+    else if (k.toString().length === 1) {
+        k = ('0' + k).slice(-2);
+    }
+    else if (i.toString().length === 1) {
+        i = ('0' + i).slice(-2);
+    }
+}
+
 //
 // Now, write a function that turns all single digit numbers into their respective two digit format. For example, 1 should be 01 and 9 should be 09. Then use this function to format your output from part 3, so it will now look like the following:
 //

@@ -23,24 +23,25 @@
 // Problems:
 // ---------
 var animals = ['rat', 'cat', 'butterfly', 'marmot', 'ocelot'];
-// - <code>rat cat butterfly marmot</code>
+
+- <code>rat cat butterfly marmot</code>
 // for (var i=0; i < 4; i++) {
 //   console.log(animals[i]);
 // }
 
 
-// - <code>rat butterfly ocelot</code>
+- <code>rat butterfly ocelot</code>
 // for (var i=0; i < animals.length; i += 2) {
 //   console.log(animals[i]);
 // }
 
-// - <code>ocelot marmot butterfly cat rat</code>
+- <code>ocelot marmot butterfly cat rat</code>
 // for (var i = animals.length -1; i >= 0; i--) {
 //   console.log(animals[i]);
 // }
 
 
-// - <code>rat cat cat butterfly butterfly marmot marmot ocelot</code>
+- <code>rat cat cat butterfly butterfly marmot marmot ocelot</code>
 
 // ---------First Idea------------
 // var slicedAnimals = animals.slice(1,4);
